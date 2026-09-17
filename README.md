@@ -17,5 +17,6 @@ O Projeto 1 da disciplina **Programação Web Fullstack** consiste no desenvolvi
 - **AJAX / Axios / Fetch API**: Para comunicação assíncrona com serviços/APIs externas.
 - **JavaScript (ES6+)**: Linguagem base para a lógica do Frontend.
 - **HTML5 & CSS3**: Estruturação e estilização das rotas/componentes dinâmicos.
+- **API Utilizada**: https://github.com/gadhagod/Hyrule-Compendium-API
 
 ---
