@@ -10,26 +10,33 @@ function App() {
   return (
     <>
       <section id="center">
+        {/*
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
+        */}
+
         <div>
-          <h1>Get started</h1>
+          <h1>hyrule-index</h1>
+          {/* 
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
+          */}
         </div>
         <button
           type="button"
           className="counter"
-          onClick={() => setCount((count) => count + 1)}
+          onClick={() => setCount((count) => (count + 1 > 10 ? 0 : count + 1))}
         >
-          Count is {count}
+          clique mais de 10 vezes, reset
         </button>
+        <p> O botão foi clicado {count} vezes</p>
       </section>
 
+{/* 
       <div className="ticks"></div>
 
       <section id="next-steps">
@@ -115,6 +122,7 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+      */}
     </>
   )
 }
