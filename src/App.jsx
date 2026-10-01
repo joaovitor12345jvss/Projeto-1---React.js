@@ -1,6 +1,7 @@
+// src/App.jsx
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
-// Depois criar um App.css para os estilos do Zelda
+import Sobre from './pages/Sobre';
 import './App.css';
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<h2>Projeto 1 - Programação Web Fullstack</h2>} />
+
+          <Route path="/sobre" element={<Sobre />} />
         </Routes>
       </main>
     </BrowserRouter>
