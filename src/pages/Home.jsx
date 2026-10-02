@@ -7,13 +7,12 @@ function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
   const [loading, setLoading] = useState(true);
+  const [selectedItem, setSelectedItem] = useState(null); // Estado do Modal
 
   useEffect(() => {
     const loadData = async () => {
       try {
         const result = await fetchAllItems();
-
-        console.log("Dados recebidos da API:", result); //
 
         if (!result) {
           setLoading(false);
@@ -103,7 +102,12 @@ function Home() {
       <section className="grid">
         {filteredItems.length > 0 ? (
           filteredItems.slice(0, 40).map((item) => (
-            <div key={item.id} className="card">
+            <div
+              key={item.id}
+              className="card"
+              onClick={() => setSelectedItem(item)}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="card-image-wrapper">
                 <img src={item.image} alt={item.name} loading="lazy" />
               </div>
@@ -119,6 +123,44 @@ function Home() {
           </div>
         )}
       </section>
+
+      {/* Janela do Modal */}
+      {selectedItem && (
+        <div className="modal-overlay" onClick={() => setSelectedItem(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={() => setSelectedItem(null)}>X</button>
+
+            <img src={selectedItem.image} alt={selectedItem.name} />
+            <h2>{selectedItem.name}</h2>
+            <p className="modal-description">{selectedItem.description}</p>
+
+            {/* Só mostra os locais se eles existirem */}
+            {selectedItem.common_locations && selectedItem.common_locations.length > 0 && (
+              <div className="modal-details">
+                <strong style={{ color: 'var(--text-gold)' }}> Locais Comuns:</strong>
+                <ul>
+                  {selectedItem.common_locations.map((loc, index) => (
+                    <li key={index}>{loc}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Só mostra os drops se eles existirem */}
+            {selectedItem.drops && selectedItem.drops.length > 0 && (
+              <div className="modal-details">
+                <strong style={{ color: 'var(--text-gold)' }}> Drops:</strong>
+                <ul>
+                  {selectedItem.drops.map((drop, index) => (
+                    <li key={index}>{drop}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
