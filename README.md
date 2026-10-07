@@ -18,7 +18,7 @@ O Projeto 1 da disciplina Programação Web Fullstack consiste no desenvolviment
 ## Divisão de Tarefas
 Para garantir que cada integrante fosse responsável por uma parte bem definida, o trabalho foi dividido da seguinte forma:
 * **Gabriel Mohamad**: Configuração inicial do repositório no GitHub, estruturação das pastas, desenvolvimento da interface, estruturação do layout HTML/CSS com tema moderno (Glassmorphism e Zelda theme)
-* **João Vitor Souza Santiago**:Implementação da camada de serviços ( `api.js` com Axios para consumo da API). Configuração do `react-router-dom` ( `App.jsx`), criação dos arquivos Home.jsx e Sobre.jsx.
+* **João Vitor Souza Santiago**:Implementação da camada de serviços ( `api.js` com Axios para consumo da API). Criação dos arquivos Home.jsx e Sobre.jsx.
 * **Abner Eduardo**: Configuração do `react-router-dom` (ficheiro `App.jsx`).
 
 ## Documentação de Ferramentas de Apoio
